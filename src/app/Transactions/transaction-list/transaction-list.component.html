@@ -1,0 +1,33 @@
+<div class="container">
+	<h4>Transactions List</h4>
+	<hr>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Date</th>
+				<th scope="col">Comments</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let transactions of transactionList; let i = index">
+				<th scope="row">{{transactions.id}}</th>
+				<td> {{transactions.date}} </td>
+				<td> {{transactions.comments}} </td>
+				<td (click)="openVerticallyCentered(content); OnViewDetails(transactions)"> {{transactions.action}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ng-template #content let-modal class="example">
+		<div class="modal-header">
+			<h4 class="modal-title">Transactions Details</h4>
+			<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+		</div>
+		<div class="modal-body">
+			<app-transaction-details [modalRef]="modalRef" [transaction]="transactionDetails"></app-transaction-details>
+		</div>
+	</ng-template>
+
+</div>

@@ -1,0 +1,16 @@
+.transactionForm {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px;
+
+    .form-group{
+        display: flex;
+        padding: 20px 0px;
+    }
+
+    .transactionFormBtns{
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 0px;
+    }
+}
